@@ -4,7 +4,7 @@ return {
 	version = "*",
 	opts = {
 		options = {
-			mode = "tabs",
+			mode = "buffers",
 			separator_style = "slant",
 			always_show_bufferline = true, -- всегда показывать bufferline
 			show_buffer_close_icons = false,

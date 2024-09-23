@@ -28,7 +28,6 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
-keymap.set("n", "<leader>bd", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap.set("n", "<leader>bb", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-keymap.set("n", "<S-l>", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
-keymap.set("n", "<S-h>", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close current tab" }) -- close current tab
+keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { desc = "Go to next tab" }) --  go to next tab
+keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { desc = "Go to previous tab" }) --  go to previous tab
