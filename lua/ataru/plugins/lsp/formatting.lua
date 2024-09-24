@@ -7,8 +7,8 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				rust = { "rustfmt" }, -- Предполагается, что rustfmt установлен
-				go = { "gofmt" }, -- Предполагается, что gofmt установлен
+				rust = { "rustfmt" },
+				go = { "gofmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
