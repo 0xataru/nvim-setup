@@ -63,7 +63,7 @@ return {
 			},
 		})
 
-		lspconfig.golangci_lint_ls.setup({})
+		-- lspconfig.golangci_lint_ls.setup({})
 		lspconfig.gopls.setup({
 			capabilities = capabilities,
 		})
