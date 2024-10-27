@@ -16,7 +16,7 @@ keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 keymap.set("n", "<leader>h", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- delete single character without copying into register
--- keymap.set("n", "x", '"_x')
+keymap.set("n", "x", '"_x')
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
@@ -31,3 +31,9 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close current tab" }) -- close current tab
 keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+
+-- move selected text
+if true then
+	keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+	keymap.set("v", "K", ":m '>-2<CR>gv=gv")
+end
