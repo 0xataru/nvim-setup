@@ -10,6 +10,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "<leader>q", ":qall<CR>", { desc = "Exit Vim" })
 keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "Save file in insert mode" })
+keymap.set("v", "<C-s>", "<ESC>:w<CR>", { desc = "Save file in visual mode" })
 keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 
 -- clear search highlights
