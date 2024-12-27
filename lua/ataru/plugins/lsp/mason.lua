@@ -31,12 +31,18 @@ return {
 				"pyright",
 				"rust_analyzer",
 				"gopls",
+				"intelephense", -- PHP LSP
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"stylua", -- lua formatter
+				"isort", -- python formatter
+				"black", -- python formatter
+				"pylint", -- python linter
+				"phpcs", -- PHP linter
+				"phpcbf", -- PHP formatter
 			},
 		})
 	end,

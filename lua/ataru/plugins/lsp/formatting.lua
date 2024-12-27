@@ -9,6 +9,8 @@ return {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
 				go = { "gofmt" },
+				python = { "isort", "black" },
+				php = { "phpcbf" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

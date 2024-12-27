@@ -9,6 +9,8 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+		-- import mason_lspconfig plugin
+		local mason_lspconfig = require("mason-lspconfig")
 		local keymap = vim.keymap -- for conciseness
 
 		-- Auto command for LSP settings
@@ -36,14 +38,7 @@ return {
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		-- Change Diagnostic symbols using sign_define (still supported)
-		-- local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		-- for type, icon in pairs(signs) do
-		-- 	local hl = "DiagnosticSign" .. type
-		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		-- end
-
-		-- Corrected rust-analyzer setup
+		-- Rust Analyzer setup
 		lspconfig.rust_analyzer.setup({
 			settings = {
 				["rust-analyzer"] = {
@@ -63,9 +58,94 @@ return {
 			},
 		})
 
-		-- lspconfig.golangci_lint_ls.setup({})
+		-- Go setup
 		lspconfig.gopls.setup({
 			capabilities = capabilities,
+		})
+
+		-- Python setup
+		lspconfig.pyright.setup({
+			capabilities = capabilities,
+		})
+
+		-- PHP setup
+		lspconfig.intelephense.setup({
+			capabilities = capabilities,
+			settings = {
+				intelephense = {
+					stubs = {
+						"apache",
+						"bcmath",
+						"bz2",
+						"calendar",
+						"com_dotnet",
+						"Core",
+						"ctype",
+						"curl",
+						"date",
+						"dba",
+						"dom",
+						"enchant",
+						"exif",
+						"FFI",
+						"fileinfo",
+						"filter",
+						"fpm",
+						"ftp",
+						"gd",
+						"gettext",
+						"gmp",
+						"hash",
+						"iconv",
+						"imap",
+						"intl",
+						"json",
+						"ldap",
+						"libxml",
+						"mbstring",
+						"mcrypt",
+						"mysqli",
+						"oci8",
+						"odbc",
+						"openssl",
+						"pcntl",
+						"pcre",
+						"PDO",
+						"pdo_mysql",
+						"pdo_sqlite",
+						"pgsql",
+						"Phar",
+						"posix",
+						"pspell",
+						"readline",
+						"Reflection",
+						"session",
+						"shmop",
+						"SimpleXML",
+						"snmp",
+						"soap",
+						"sockets",
+						"sodium",
+						"SPL",
+						"sqlite3",
+						"standard",
+						"superglobals",
+						"sysvsem",
+						"sysvshm",
+						"tokenizer",
+						"xml",
+						"xmlreader",
+						"xmlwriter",
+						"yaml",
+						"Zend OPcache",
+						"zip",
+						"zlib",
+					},
+					files = {
+						maxSize = 5000000,
+					},
+				},
+			},
 		})
 	end,
 }
