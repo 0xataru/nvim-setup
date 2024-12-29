@@ -5,7 +5,6 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status")
 
-		-- Новая цветовая гамма
 		local colors = {
 			blue = "#80aaff",
 			green = "#73daca",
@@ -50,7 +49,6 @@ return {
 			},
 		}
 
-		-- Настройка lualine с новой темой и отображением полного пути к файлу
 		lualine.setup({
 			options = {
 				theme = my_lualine_theme,
@@ -59,6 +57,12 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = {
+					{
+						function()
+							return " ⚡ "
+						end,
+						color = { fg = colors.fg },
+					},
 					{
 						"filename",
 						path = 1, -- 1 for full path, 0 for relative path, 3 for just filename
