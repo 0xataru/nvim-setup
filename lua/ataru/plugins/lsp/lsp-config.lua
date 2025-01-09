@@ -147,5 +147,39 @@ return {
 				},
 			},
 		})
+
+		-- TypeScript/JavaScript setup
+		lspconfig.ts_ls.setup({
+			capabilities = capabilities,
+			settings = {
+				javascript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+					},
+				},
+				typescript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+					},
+				},
+			},
+		})
+
+		-- React and TailwindCSS support
+		lspconfig.tailwindcss.setup({
+			capabilities = capabilities,
+		})
+
+		-- HTML/Emmet setup
+		lspconfig.emmet_ls.setup({
+			capabilities = capabilities,
+			filetypes = { "html", "css", "typescriptreact", "javascriptreact", "svelte" },
+		})
 	end,
 }

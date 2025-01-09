@@ -27,22 +27,35 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"lua_ls",
-				"pyright",
-				"rust_analyzer",
-				"gopls",
+				"lua_ls", -- Lua LSP
+				"pyright", -- Python LSP
+				"rust_analyzer", -- Rust LSP
+				"gopls", -- Go LSP
 				"intelephense", -- PHP LSP
+				"ts_ls", -- TypeScript/JavaScript LSP
+				"tailwindcss", -- TailwindCSS LSP
+				"html", -- HTML LSP
+				"cssls", -- CSS LSP
+				"emmet_ls", -- Emmet LSP
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint", -- python linter
-				"phpcs", -- PHP linter
+				-- Formatters
+				"stylua", -- Lua formatter
+				"isort", -- Python formatter
+				"black", -- Python formatter
 				"phpcbf", -- PHP formatter
+				"prettier", -- Formatter for JS/TS/HTML/CSS/Markdown
+				-- Linters
+				"pylint", -- Python linter
+				"phpcs", -- PHP linter
+				"eslint_d", -- JS/TS linter
+				"stylelint", -- CSS linter
+				"jsonlint", -- JSON linter
+				"yamllint", -- YAML linter
+				"markdownlint", -- Markdown linter
 			},
 		})
 	end,
