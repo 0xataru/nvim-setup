@@ -38,3 +38,8 @@ if true then
 	keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 	keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 end
+
+-- copilot keymaps
+keymap.set("n", "<leader>te", ":Copilot enable<CR>", { noremap = true, silent = false })
+keymap.set("n", "<leader>td", ":Copilot disable<CR>", { noremap = true, silent = false })
+keymap.set("n", "<leader>ts", ":Copilot status<CR>", { noremap = true, silent = false })

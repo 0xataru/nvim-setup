@@ -25,12 +25,6 @@ return {
 				},
 				copilot_node_command = "node",
 			})
-
-			local keymap = vim.keymap -- for conciseness
-
-			keymap.set("n", "<leader>te", ":Copilot enable<CR>", { noremap = true, silent = false })
-			keymap.set("n", "<leader>td", ":Copilot disable<CR>", { noremap = true, silent = false })
-			keymap.set("n", "<leader>ts", ":Copilot status<CR>", { noremap = true, silent = false })
 		end,
 	},
 }
